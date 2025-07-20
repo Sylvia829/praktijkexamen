@@ -9,3 +9,18 @@ def bereken_pensioen(leeftijd, statuut):
             else:
                 return None
             
+leeftijd_input = input("Wat is je leeftijd?")
+leeftijd = int(leeftijd_input)
+
+statuut = input("Wat is je werkstatuut?")
+
+geldige_statuten = ["medewerker", "zelfstandige", "ambtenaar"]
+if statuut not in geldige_statuten:
+    print("Ongeldige werkstatuut")
+else: 
+    pensioen = bereken_pensioen(leeftijd, statuut)
+    if pensioen is not None:
+        print (f"Je krijgt € {pensioen} per week.")
+    else:
+        jaren_te_werken = 65 - leeftijd
+        print (f"Van werken word je gelukkig, je mag nog {jaren_te_werken} jaar genieten van je baan.")
